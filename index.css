@@ -22,25 +22,10 @@ ul {
 }
 
 .header {
-  padding: 20px;
-  text-align: center;
+  padding: 10px;
+  text-align: right;
   background-color: rgb(123, 133, 145);
   margin-bottom: 30px;
-  color: white;
-}
-
-.header button {
-  border: none;
-  padding: 5px;
-  border-radius: 5px;
-  margin-left: 10px;
-  background-color: gray;
-  color: white;
-}
-
-h1 {
-  color: white;
-  font-size: 20px;
 }
 
 .footer {
@@ -51,14 +36,14 @@ h1 {
   background-color: rgb(85, 93, 103);
   color: white;
   text-align: center;
-  height: 90px;
+  height: 80px;
 }
 
 a,
 a:visited,
 a:hover {
   text-decoration: none;
-  color: rgb(72, 71, 71);
+  color: rgb(92, 76, 100);
 }
 
 .modal {

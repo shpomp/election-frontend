@@ -1,14 +1,16 @@
 <head>
   <link rel="stylesheet" href="./pages/candidates/candidates.css" />
-  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
 
-  <script src="../firebase-things/login.js" type="module"></script>
+  <script src="../firebase-things/login.js" type="module"></script> -->
   <script src="./pages/candidates/candidates.js" type="module"></script>
 </head>
-   
-    <div class="tabs" >  
+    <h1 class="page-header">CANDIDATES</h1>
+
+    <div class="tabs" > 
+ 
       <button class="tab" onclick="showTab(event, 'all')">all</button>
       <button class="tab" onclick="showTab(event, 'SD')">Socialdemokratiet</button>
       <button class="tab" onclick="showTab(event, 'DKF')">Det konservative Folkeparti</button>
@@ -18,25 +20,33 @@
       <button class="tab" onclick="showTab(event, 'DRG')">De Rød-Grønne</button>
     </div>
 
+
     <div id="all" class="tab-content" style="display:block">
+      <div class="party-tab"></div>
     </div>
 
     <div id="SD" class="tab-content">
+      <div class="party-tab"></div>
     </div>
 
-    <div id="DKF" class="tab-content">    
+    <div id="DKF" class="tab-content"> 
+      <div class="party-tab"></div>
     </div>
 
     <div id="SF" class="tab-content" >
+     <div class="party-tab"></div>
     </div>
     
-    <div id="DF" class="tab-content" >  
+    <div id="DF" class="tab-content" > 
+     <div class="party-tab"></div>
     </div>
 
     <div id="DLP" class="tab-content">
+     <div class="party-tab"></div>
     </div>
 
     <div id="DRG" class="tab-content">
+     <div class="party-tab"></div>
     </div>
     
  
