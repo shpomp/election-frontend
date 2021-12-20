@@ -22,6 +22,9 @@ function addCandidate(candidate) {
         `you submitted canddiate ${candidate.name} ${candidate.lastName} to the  ${candidate.party.name} party`
       );
       console.log("Success:", data);
+      document.getElementById("fname").value = "";
+      document.getElementById("lname").value = "";
+      document.getElementById("party").value = "none";
     })
     .catch((error) => {
       console.error("Error:", error);
