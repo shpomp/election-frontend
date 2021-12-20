@@ -1,0 +1,7 @@
+#my {
+  display: grid;
+  grid-template-columns: repeat(3, 25vw);
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 150px;
+}

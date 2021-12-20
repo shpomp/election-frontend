@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../firebase-things/login.css"
+    />
+    <script src="../login/login.js" type="module"></script>
+  </head>
+  <body>
+    <div id="content_container">
+      <div id="form_container">
+        <div id="form_header_container">
+          <h2 id="form_header">hej, noob!</h2>
+        </div>
+
+        <div id="form_content_container">
+          <div id="form_content_inner_container">
+            <input type="email" id="email" placeholder="email" name="email" />
+            <input
+              type="password"
+              id="password"
+              placeholder="password"
+              name="password"
+            />
+
+            <div id="button_container">
+              <button onclick="login()">login</button>
+              <button onclick="register()">register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

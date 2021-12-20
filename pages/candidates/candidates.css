@@ -1,0 +1,39 @@
+/* tabs */
+
+.tabs button,
+.remove-selected-button,
+.save-settings-button {
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  min-width: 100px;
+}
+
+.tabs button:hover {
+  background-color: rgb(199, 199, 199);
+}
+
+.tabs button.active,
+.remove-selected-button:hover,
+.save-settings-button:hover {
+  background-color: rgb(95, 153, 223);
+  color: white;
+  outline: none;
+}
+
+.tab-content {
+  display: none;
+  padding: 20px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  padding-bottom: 150px;
+}
+
+.tabs img {
+  border-radius: 50%;
+  max-width: 10vw;
+  padding: 10px;
+  filter: grayscale(70%);
+}

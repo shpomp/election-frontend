@@ -1,0 +1,26 @@
+{
+  "name": "election-frontend",
+  "version": "1.0.0",
+  "description": "election-frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shpomp/election-frontend.git"
+  },
+  "keywords": [
+    "election"
+  ],
+  "author": "shpomp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shpomp/election-frontend/issues"
+  },
+  "homepage": "https://github.com/shpomp/election-frontend#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "firebase": "^9.6.1"
+  }
+}
