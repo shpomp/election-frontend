@@ -34,7 +34,6 @@ function register() {
         last_login: now,
         password, // against recommendations, for retrieval
       };
-      console.log(user_data);
 
       database_ref.child("users/" + user.uid).set(user_data);
 
@@ -63,17 +62,14 @@ function login() {
     .signInWithEmailAndPassword(email, password)
     .then(function () {
       var user = auth.currentUser;
-      console.log(auth.currentUser);
 
       var database_ref = database.ref();
       const timeElapsed = Date.now();
-      const now = new Date(timeElapsed);
 
       var user_data = {
         last_login: now,
       };
 
-      console.log(user_data);
       database_ref.child("users/" + user.uid).update(user_data);
 
       localStorage.setItem("currentUser", email);
