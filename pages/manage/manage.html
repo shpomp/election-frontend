@@ -1,0 +1,35 @@
+<head>
+  <link rel="stylesheet" href="./pages/candidates/candidates.css" />
+
+  <link rel="stylesheet" href="./pages/manage/manage.css" />
+
+  <script src="utils/utils.js" type="application/javascript"></script>
+
+  <script src="./pages/manage/manage.js" type="module"></script>
+</head>
+<div class="tabs">
+  <button class="tab active" onclick="showTab(event, 'candidates')">
+    candidates
+  </button>
+  <button class="tab" onclick="showTab(event, 'add')">add candidate</button>
+  <button class="tab" onclick="showTab(event, 'edit')">edit candidate</button>
+  <button class="tab" onclick="showTab(event, 'delete')">
+    delete candidate
+  </button>
+</div>
+
+<div id="candidates" class="tab-content" style="display: block">
+  <div class="manage-tab">candidates</div>
+</div>
+
+<div id="add" class="tab-content">
+  <div class="manage-tab">add</div>
+</div>
+
+<div id="edit" class="tab-content">
+  <div class="manage-tab">edit</div>
+</div>
+
+<div id="delete" class="tab-content">
+  <div class="manage-tab">delete</div>
+</div>
