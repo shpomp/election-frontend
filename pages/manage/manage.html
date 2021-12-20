@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <head>
   <link rel="stylesheet" href="./pages/candidates/candidates.css" />
 
@@ -6,30 +8,61 @@
   <script src="utils/utils.js" type="application/javascript"></script>
 
   <script src="./pages/manage/manage.js" type="module"></script>
+
 </head>
-<div class="tabs">
-  <button class="tab active" onclick="showTab(event, 'candidates')">
-    candidates
-  </button>
-  <button class="tab" onclick="showTab(event, 'add')">add candidate</button>
-  <button class="tab" onclick="showTab(event, 'edit')">edit candidate</button>
-  <button class="tab" onclick="showTab(event, 'delete')">
-    delete candidate
-  </button>
-</div>
+<body>
+  <div class="tabs">
+    <button class="tab active" onclick="showTab(event, 'candidates')">
+      candidates
+    </button>
+    <button class="tab" onclick="showTab(event, 'add')">add candidate</button>
+    <button class="tab" onclick="showTab(event, 'edit')">edit candidate</button>
+    <button class="tab" onclick="showTab(event, 'delete')">
+      delete candidate
+    </button>
+  </div>
 
-<div id="candidates" class="tab-content" style="display: block">
-  <div class="manage-tab">candidates</div>
-</div>
+  <div id="candidates" class="tab-content" style="display: block">
+    <div class="manage-tab">candidates</div>
+  </div>
 
-<div id="add" class="tab-content">
-  <div class="manage-tab">add</div>
-</div>
+  <div id="add" class="tab-content">
+    <div class="manage-tab">
+      <form id="candidate-form">
+        <div>
+          <label for="fname">First name:</label>
+          <input type="text" id="fname" name="fname" required/>
+        </div>
+        <div>
+          <label for="lname">Last name:</label>
+          <input type="text" id="lname" name="lname" required/>
+        </div>
+        <div>
+          <select id="party" name="partylist" form="candidate-form" required>
+            <option value="none">---</option>
+            <option value="SD">Socialdemokratiet</option>
+            <option value="DKF">Det konservative Folkeparti</option>
+            <option value="SF">Socialistisk Folkeparti</option>
+            <option value="DF">Dansk Folkeparti</option>
+            <option value="DLP">Danmarks Liberale Parti</option>
+            <option value="DRG">De Rød-Grønne</option>
+          </select>
+          <div>
+            <button onclick="submitCandidateForm(event)">add candidate</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 
-<div id="edit" class="tab-content">
-  <div class="manage-tab">edit</div>
-</div>
+  <div id="edit" class="tab-content">
+    <div class="manage-tab">edit</div>
+  </div>
 
-<div id="delete" class="tab-content">
-  <div class="manage-tab">delete</div>
-</div>
+  <div id="delete" class="tab-content">
+    <div class="manage-tab">delete</div>
+  </div>
+
+</body>
+
+</html>

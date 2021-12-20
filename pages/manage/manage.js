@@ -5,8 +5,6 @@ export default () => {
     .then((response) => response.text())
     .then((manageHTML) => {
       root.innerHTML = manageHTML;
-
-      addCandidate();
     });
 };
 
@@ -48,4 +46,9 @@ function addCandidate() {
     .catch((error) => {
       console.error("Error:", error);
     });
+}
+
+function submitCandidateForm(event) {
+  event.preventDefault();
+  console.log(formSubmited);
 }
