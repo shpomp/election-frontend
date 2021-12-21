@@ -37,7 +37,9 @@ function register() {
 
       database_ref.child("users/" + user.uid).set(user_data);
 
-      alert("user created!");
+      setTimeout(function () {
+        alert("user created!");
+      }, 500);
     })
     .catch(function (error) {
       var error_code = error.code;
@@ -73,7 +75,10 @@ function login() {
       database_ref.child("users/" + user.uid).update(user_data);
 
       localStorage.setItem("currentUser", email);
-      alert("User Logged In!!");
+
+      setTimeout(function () {
+        alert("User Logged In!!");
+      }, 500);
     })
     .catch(function (error) {
       var error_code = error.code;

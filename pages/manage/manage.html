@@ -9,25 +9,22 @@
 
   <script src="./pages/manage/manage.js" type="module"></script>
 
+
 </head>
 <body>
   <div class="tabs">
     <button class="tab active" onclick="showTab(event, 'candidates')">
-      candidates
+      manage candidates
     </button>
     <button class="tab" onclick="showTab(event, 'add')">add candidate</button>
-    <button class="tab" onclick="showTab(event, 'edit')">edit candidate</button>
-    <button class="tab" onclick="showTab(event, 'delete')">
-      delete candidate
-    </button>
   </div>
 
   <div id="candidates" class="tab-content" style="display: block">
-    <div class="manage-tab">candidates</div>
+    <div id="candidates-tab"></div>
   </div>
 
   <div id="add" class="tab-content">
-    <div class="manage-tab">
+    <div id="manage-tab">
       <form id="candidate-form">
         <div>
           <label for="fname">First name:</label>
@@ -55,13 +52,7 @@
     </div>
   </div>
 
-  <div id="edit" class="tab-content">
-    <div class="manage-tab">edit</div>
-  </div>
 
-  <div id="delete" class="tab-content">
-    <div class="manage-tab">delete</div>
-  </div>
 
 </body>
 

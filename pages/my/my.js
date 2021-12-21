@@ -3,7 +3,7 @@ export default () => {
 
   fetch("./pages/my/my.html")
     .then((response) => response.text())
-    .then((eventsHTML) => {
-      root.innerHTML = eventsHTML;
+    .then((myHTML) => {
+      root.innerHTML = myHTML;
     });
 };

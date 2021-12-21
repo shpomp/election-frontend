@@ -1,14 +1,4 @@
 function addCandidate(candidate) {
-  const data = {
-    name: "new",
-    lastName: "politician",
-    party: {
-      id: 1,
-      name: "Socialdemokratiet",
-      abbreviation: "SD",
-    },
-  };
-
   fetch("http://localhost:9191/candidate", {
     method: "POST",
     headers: {
@@ -21,7 +11,7 @@ function addCandidate(candidate) {
       alert(
         `you submitted canddiate ${candidate.name} ${candidate.lastName} to the  ${candidate.party.name} party`
       );
-      console.log("Success:", data);
+      console.log("Success!");
       document.getElementById("fname").value = "";
       document.getElementById("lname").value = "";
       document.getElementById("party").value = "none";

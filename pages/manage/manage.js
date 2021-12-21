@@ -1,3 +1,6 @@
+import { renderCandidate } from "../candidates/candidates.js";
+import { editCandidate, deleteCandidate } from "./editDeleteCandidate.js";
+
 export default () => {
   const root = document.querySelector(".root");
 
@@ -5,50 +8,32 @@ export default () => {
     .then((response) => response.text())
     .then((manageHTML) => {
       root.innerHTML = manageHTML;
+
+      fetch("http://localhost:9191/candidates")
+        .then((response) => response.json())
+        .then((data) => {
+          let candidatesArray = data;
+          let canddidatesTab = document.getElementById("candidates-tab");
+
+          if (candidatesArray && candidatesArray.length > 0) {
+            for (let i = 0; i < candidatesArray.length; i++) {
+              renderCandidate(candidatesArray[i], canddidatesTab, true);
+              let editButton = document.getElementById(
+                "edit-candidate" + candidatesArray[i].id
+              );
+              editButton.addEventListener("click", function () {
+                editCandidate();
+              });
+              let deleteButton = document.getElementById(
+                "delete-candidate" + candidatesArray[i].id
+              );
+              deleteButton.addEventListener("click", function () {
+                deleteCandidate(candidatesArray[i].id);
+              });
+            }
+          } else {
+            root.innerHTML = "no data :/";
+          }
+        });
     });
 };
-
-// POST body from postman
-// {
-//     "name": "new",
-//     "lastName": "politician",
-//     "party": {
-//         "id": 1,
-//         "name": "Socialdemokratiet",
-//         "abbreviation": "SD"
-//     }
-// }
-
-// candidate, partyId;
-
-function addCandidate() {
-  const data = {
-    name: "new",
-    lastName: "politician",
-    party: {
-      id: 1,
-      name: "Socialdemokratiet",
-      abbreviation: "SD",
-    },
-  };
-
-  fetch("http://localhost:9191/candidate", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Success:", data);
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
-}
-
-function submitCandidateForm(event) {
-  event.preventDefault();
-  console.log(formSubmited);
-}

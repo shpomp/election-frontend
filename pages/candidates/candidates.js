@@ -20,13 +20,13 @@ export default () => {
           // inner loop iterates through party-tabs and renders candidates to respective party-tab
           if (candidatesArray && candidatesArray.length > 0) {
             for (let i = 0; i < candidatesArray.length; i++) {
-              renderCandidate(candidatesArray[i], ALLtab);
+              renderCandidate(candidatesArray[i], ALLtab, false);
 
               for (let j = 0; j < tabs.length; j++) {
                 let currentPartyTab =
                   tabs[j].getElementsByClassName("party-tab")[0];
                 if (candidatesArray[i].party.abbreviation === tabs[j].id) {
-                  renderCandidate(candidatesArray[i], currentPartyTab);
+                  renderCandidate(candidatesArray[i], currentPartyTab, false);
                 }
               }
             }
@@ -37,7 +37,7 @@ export default () => {
     });
 };
 
-function renderCandidate(candidate, parentElement) {
+export function renderCandidate(candidate, parentElement, manage) {
   let name = candidate.name + " " + candidate.lastName;
   let partyAbbrev = candidate.party.abbreviation;
 
@@ -51,6 +51,23 @@ function renderCandidate(candidate, parentElement) {
   candidateIMG.setAttribute("src", "./utils/generic_avatar.png");
   candidateNameH3.innerHTML = name;
   candidatePartySpan.innerHTML = partyAbbrev;
+
+  if (manage) {
+    let editButton = document.createElement("button");
+    editButton.setAttribute("class", "edit-delete-button");
+    editButton.setAttribute("id", "edit-candidate" + candidate.id);
+
+    editButton.innerHTML = `edit`;
+
+    let deleteButton = document.createElement("button");
+    deleteButton.setAttribute("class", "edit-delete-button");
+    deleteButton.setAttribute("id", "delete-candidate" + candidate.id);
+
+    deleteButton.innerHTML = `delete`;
+
+    candidateDiv.append(editButton, deleteButton);
+  }
+
   candidateDiv.append(candidateIMG, candidateNameH3, candidatePartySpan);
   parentElement.appendChild(candidateDiv);
 }
