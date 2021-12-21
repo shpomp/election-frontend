@@ -10,10 +10,12 @@ export function saveEditedCandidate(id, body) {
     .then((result) => {
       alert("changes saved!");
       console.log("Success:", result);
-      window.location = window.location.href.substring(
-        0,
-        window.location.href.indexOf("candidate")
-      );
+      setTimeout(function () {
+        window.location = window.location.href.substring(
+          0,
+          window.location.href.indexOf("#")
+        );
+      }, 400);
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -45,10 +47,12 @@ export function deleteCandidate(id) {
               alert(
                 `you deleted candidate ${candidate.name} ${candidate.lastName}!`
               );
-              window.location = window.location.href.substring(
-                0,
-                window.location.href.indexOf("candidate")
-              );
+              setTimeout(function () {
+                window.location = window.location.href.replace(
+                  "/#/manage",
+                  "/#/candidates"
+                );
+              }, 400);
             })
             .catch((error) => {
               console.error("Error:", error);

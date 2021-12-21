@@ -15,6 +15,12 @@ function addCandidate(candidate) {
       document.getElementById("fname").value = "";
       document.getElementById("lname").value = "";
       document.getElementById("party").value = "none";
+      setTimeout(function () {
+        window.location = window.location.href.replace(
+          "/#/manage",
+          "/#/candidates"
+        );
+      }, 500);
     })
     .catch((error) => {
       console.error("Error:", error);
