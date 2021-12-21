@@ -92,7 +92,7 @@ function login() {
 
   setTimeout(function () {
     window.location = window.location.href.replace("#/login", "");
-  }, 500);
+  }, 700);
 }
 
 function validate_email(email) {
