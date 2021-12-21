@@ -8,7 +8,12 @@ export function saveEditedCandidate(id, body) {
   })
     .then((response) => response.json())
     .then((result) => {
+      alert("changes saved!");
       console.log("Success:", result);
+      window.location = window.location.href.substring(
+        0,
+        window.location.href.indexOf("candidate")
+      );
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -40,7 +45,10 @@ export function deleteCandidate(id) {
               alert(
                 `you deleted candidate ${candidate.name} ${candidate.lastName}!`
               );
-              location.reload();
+              window.location = window.location.href.substring(
+                0,
+                window.location.href.indexOf("candidate")
+              );
             })
             .catch((error) => {
               console.error("Error:", error);

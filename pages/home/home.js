@@ -18,8 +18,14 @@ export default () => {
         );
         loginRegisterButton.style.display = "none";
         // add logout button to header
-        let headerLogoutButton = document.createElement("button");
+        let headerLogoutButtonExists = document.getElementById(
+          "header-logout-button"
+        );
+        let headerLogoutButton = headerLogoutButtonExists
+          ? document.getElementById("header-logout-button")
+          : document.createElement("button");
         headerLogoutButton.innerHTML = "logout";
+        headerLogoutButton.setAttribute("id", "header-logout-button");
         headerLogoutButton.addEventListener("click", () => logout());
         header.appendChild(headerLogoutButton);
       }

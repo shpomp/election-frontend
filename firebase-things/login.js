@@ -91,8 +91,7 @@ function login() {
     });
 
   setTimeout(function () {
-    // window.location = "";
-    console.log("remember to add window location!");
+    window.location = window.location.href.replace("#/login", "");
   }, 500);
 }
 

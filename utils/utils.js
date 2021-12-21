@@ -17,21 +17,21 @@ function logout() {
   if (confirm("are you sure you want to log out?")) {
     window.localStorage.removeItem("currentUser");
     setTimeout(function () {
-      console.log("fix window location!");
-      // window.location = "";
+      if (window.location.href.indexOf("manage") > -1) {
+        setTimeout(function () {
+          console.log("bye!");
+          window.location = window.location.href.replace("#/manage", "");
+        }, 500);
+      } else if (window.location.href.indexOf("my") > -1) {
+        setTimeout(function () {
+          console.log("bye!");
+          window.location = window.location.href.replace("#/my", "");
+        }, 500);
+      } else {
+        setTimeout(function () {
+          location.reload();
+        }, 500);
+      }
     }, 500);
-  } else {
-    if (window.location.href.indexOf("") > -1) {
-      setTimeout(function () {
-        console.log("fix window location!");
-        // window.location =
-        ("");
-      }, 500);
-    } else {
-      setTimeout(function () {
-        console.log("fix window location!");
-        // window.location = "";
-      }, 500);
-    }
   }
 }

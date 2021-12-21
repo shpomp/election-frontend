@@ -24,7 +24,6 @@ export default () => {
               editButton.addEventListener("click", function () {
                 window.location =
                   window.location + `/candidate/${candidatesArray[i].id}`;
-                // editCandidate();
               });
               let deleteButton = document.getElementById(
                 "delete-candidate" + candidatesArray[i].id

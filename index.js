@@ -37,22 +37,30 @@ import renderLOL from "./pages/lol/lol.js";
         renderCandidates();
       },
       "/manage": () => {
-        renderManage();
-        // if (
-        //   fauth.currentUser === null ||
-        //   localStorage.currentUser == undefined
-        // ) {
-        //   renderHome().then(router.updatePageLinks);
-        //   setTimeout(function () {
-        //     renderModal();
-        //   }, 500);
-        // } else {
-        //   renderManage();
-        // }
+        if (
+          fauth.currentUser === null ||
+          localStorage.currentUser == undefined
+        ) {
+          renderHome().then(router.updatePageLinks);
+          setTimeout(function () {
+            renderModal();
+          }, 500);
+        } else {
+          renderManage();
+        }
       },
       "/manage/candidate/:id": (params) => {
-        console.log(params.data.id);
-        renderEditCandidate(params.data.id);
+        if (
+          fauth.currentUser === null ||
+          localStorage.currentUser == undefined
+        ) {
+          renderHome().then(router.updatePageLinks);
+          setTimeout(function () {
+            renderModal();
+          }, 500);
+        } else {
+          renderEditCandidate(params.data.id);
+        }
       },
       "/login": () => {
         renderLogin();
