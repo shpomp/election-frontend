@@ -1,0 +1,31 @@
+<head>
+  <link rel="stylesheet" href="./pages/manage/manage.css" />
+  <script
+    src="../manage/editDeleteCandidate.js"
+    type="application/javascript"
+  ></script>
+</head>
+<form id="candidate-form">
+  <div>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname" required />
+  </div>
+  <div>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname" required />
+  </div>
+  <div>
+    <select id="party" name="partylist" form="candidate-form" required>
+      <option value="none">---</option>
+      <option value="SD">Socialdemokratiet</option>
+      <option value="DKF">Det konservative Folkeparti</option>
+      <option value="SF">Socialistisk Folkeparti</option>
+      <option value="DF">Dansk Folkeparti</option>
+      <option value="DLP">Danmarks Liberale Parti</option>
+      <option value="DRG">De Rød-Grønne</option>
+    </select>
+    <div>
+      <button id="save-edited-candidate">save</button>
+    </div>
+  </div>
+</form>

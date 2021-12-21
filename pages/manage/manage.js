@@ -1,5 +1,5 @@
 import { renderCandidate } from "../candidates/candidates.js";
-import { editCandidate, deleteCandidate } from "./editDeleteCandidate.js";
+import { deleteCandidate } from "./editDeleteCandidate.js";
 
 export default () => {
   const root = document.querySelector(".root");
@@ -22,7 +22,9 @@ export default () => {
                 "edit-candidate" + candidatesArray[i].id
               );
               editButton.addEventListener("click", function () {
-                editCandidate();
+                window.location =
+                  window.location + `/candidate/${candidatesArray[i].id}`;
+                // editCandidate();
               });
               let deleteButton = document.getElementById(
                 "delete-candidate" + candidatesArray[i].id

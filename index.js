@@ -1,5 +1,6 @@
 import renderHome from "./pages/home/home.js";
 import renderCandidates from "./pages/candidates/candidates.js";
+import renderEditCandidate from "./pages/manage/editCandidatePage.js";
 import renderManage from "./pages/manage/manage.js";
 import renderParties from "./pages/parties/parties.js";
 import renderMy from "./pages/my/my.js";
@@ -48,6 +49,10 @@ import renderLOL from "./pages/lol/lol.js";
         // } else {
         //   renderManage();
         // }
+      },
+      "/manage/candidate/:id": (params) => {
+        console.log(params.data.id);
+        renderEditCandidate(params.data.id);
       },
       "/login": () => {
         renderLogin();

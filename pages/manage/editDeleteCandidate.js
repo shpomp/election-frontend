@@ -1,6 +1,18 @@
-export function editCandidate() {
-  alert("edit candidate coming soon!");
-  console.log("edit candidate coming soon!");
+export function saveEditedCandidate(id, body) {
+  fetch(`http://localhost:9191/candidate/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  })
+    .then((response) => response.json())
+    .then((result) => {
+      console.log("Success:", result);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 }
 
 export function deleteCandidate(id) {

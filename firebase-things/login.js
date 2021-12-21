@@ -5,6 +5,8 @@ const firebaseConfig = {
   storageBucket: "election-frenzy.appspot.com",
   messagingSenderId: "453091434628",
   appId: "1:453091434628:web:ef4b5bff64af789a5862d1",
+  databaseURL:
+    "to https://election-frenzy-default-rtdb.europe-west1.firebasedatabase.app",
 };
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
@@ -31,7 +33,7 @@ function register() {
       const now = new Date(timeElapsed);
       var user_data = {
         email,
-        last_login: now,
+        last_login: timeElapsed,
         password, // against recommendations, for retrieval
       };
 
@@ -67,6 +69,7 @@ function login() {
 
       var database_ref = database.ref();
       const timeElapsed = Date.now();
+      const now = new Date(timeElapsed);
 
       var user_data = {
         last_login: now,
